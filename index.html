@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MedicSalud — Atención médica integral con calidez humana</title>
+  <link rel="icon" href="img/logomedical.ico" type="image/x-icon" />
+  <meta name="description" content="Clínica de salud integral con terapias innovadoras: ozonoterapia y plasma rico en plaquetas (PRP). Atención accesible, de calidad y con calidez humana." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  
+</head>
+<body>
+  <!--
+    DIRECTION CONTRACT — MEDICSALUD landing (Persuade)
+    THESIS: La clínica se presenta como ciencia viva con calidez humana; rechaza la plantilla médica fría (azul institucional + grilla de tarjetas de icono) por un sistema editorial cálido donde el oxígeno (ozono) y la regeneración (plasma) son los motores visuales y la confianza se demuestra, no se afirma.
+    OWN-WORLD: Suelo cálido (#f6f0f0), tinta verde-ozono (#10302A) que envuelve el hero, acento dominante verde (#2E7D32) con verde brillante (#83c352), y acento cálido plasma (#E0A33B) como contraste; display Bricolage Grotesque + cuerpo Hanken Grotesk; orbes orgánicos y línea de pulso como gramática de marca.
+    STORY: En segundos el visitante entiende que MedicSalud une terapias innovadoras (ozono/PRP) con trato humano, y agenda una cita sin fricción gracias a un toggle de terapia que re-tematiza el hero.
+    FIRST VIEWPORT: Izquierda: titular editorial grande + toggle de terapia (Ozonoterapia | PRP) que cambia el copy y el color del motivo; CTA primario "Agenda tu cita". Derecha: motivo SVG orbital (núcleo pulsante + partículas en órbita + línea de pulso) en acento ozano/plasma. Nav superior con CTA a la derecha.
+    FORM: new-work, dirección asignada por el director (concept-seed no ejecutable en este entorno de CLI); surface único landing.
+    FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+  -->
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="brand" href="#top" aria-label="MedicSalud inicio">
+          
+        <svg class="brand__art animate__animated animate__fadeInLeftBig" viewBox="0 0 48 48" width="40" height="40" aria-hidden="true" focusable="false">
+          <circle class="ba-glow" cx="24" cy="24" r="20" fill="var(--green)" opacity="0.20" />
+          <g class="ba-orbit">
+            <ellipse cx="24" cy="24" rx="18" ry="11" stroke="var(--green)" stroke-width="1.4" fill="none" opacity="0.55" />
+            <circle class="ba-node" cx="42" cy="24" r="3" fill="var(--green)" />
+            <circle class="ba-node" cx="10" cy="30" r="2.2" fill="var(--plasma)" />
+          </g>
+          <circle class="ba-core" cx="24" cy="24" r="7" fill="var(--ozone)" />
+          <circle cx="24" cy="24" r="7" stroke="#fff" stroke-width="1" opacity="0.4" fill="none" />
+          <path class="ba-pulse" d="M6 40 C 14 40, 18 34, 24 34 S 34 46, 42 46" stroke="var(--plasma)" stroke-width="1.6" fill="none" stroke-linecap="round" />
+        </svg>
+        <img class="brand__logo animate__animated animate__fadeInTopRight"src="img/logomedical2.svg" alt="MedicSalud" />
+        
+      </a>
+      <nav class="nav__links" aria-label="Principal" id="menu">
+        <a href="#terapias">Terapias</a>
+        <a href="#proceso">Cómo funciona</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+        <a class="btn btn--plasma nav__cta" href="#contacto">Agenda tu cita</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <span id="contenido"></span>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <h1 class="hero__title">Curamos con ciencia, <span class="hl">tratamos con calidez</span>.</h1>
+          <p class="hero__lede">Clínica de salud integral con terapias innovadoras —ozonoterapia y plasma rico en plaquetas— entregadas con empatía, respeto y cercanía humana.</p>
+
+          <div class="therapy" role="group" aria-label="Elige una terapia">
+            <button class="therapy__opt is-active" data-therapy="ozono" aria-pressed="true">Ozonoterapia</button>
+            <button class="therapy__opt" data-therapy="prp" aria-pressed="false">Plasma (PRP)</button>
+          </div>
+          <p class="therapy__desc" id="therapyDesc" aria-live="polite">El ozono médico estimula la oxigenación y la respuesta natural del cuerpo. Una terapia limpia, indolora y pensada para ti.</p>
+
+          <div class="hero__actions">
+            <a class="btn btn--ozone btn--lg" href="#contacto">Agenda tu cita</a>
+            <a class="btn btn--ghost btn--lg" href="#terapias">Conoce las terapias</a>
+          </div>
+        </div>
+
+        <div class="hero__visual" data-theme="ozono">
+          <div class="orb">
+            <svg viewBox="0 0 400 400" class="orb__svg" role="img" aria-label="Motivo de oxígeno y pulso vital">
+              <defs>
+                <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="var(--motif-a)" stop-opacity="0.35" />
+                  <stop offset="100%" stop-color="var(--motif-a)" stop-opacity="0" />
+                </radialGradient>
+              </defs>
+              <circle class="orb__glow" cx="200" cy="200" r="160" fill="url(#glow)" />
+              <g class="orb__orbit" style="transform-origin:200px 200px">
+                <ellipse cx="200" cy="200" rx="150" ry="92" stroke="var(--motif-a)" stroke-width="1.4" fill="none" opacity="0.35" />
+                <ellipse cx="200" cy="200" rx="112" ry="148" stroke="var(--motif-b)" stroke-width="1.4" fill="none" opacity="0.30" transform="rotate(60 200 200)" />
+                <circle class="orb__node" cx="350" cy="200" r="9" fill="var(--motif-a)" />
+                <circle class="orb__node orb__node--b" cx="200" cy="52" r="7" fill="var(--motif-b)" />
+                <circle class="orb__node" cx="96" cy="262" r="6" fill="var(--motif-a)" opacity="0.85" />
+              </g>
+              <circle class="orb__core" cx="200" cy="200" r="34" fill="var(--motif-a)" />
+              <circle cx="200" cy="200" r="34" stroke="#fff" stroke-width="1.2" opacity="0.5" fill="none" />
+              <path class="orb__pulse" d="M30 320 C 80 320, 100 290, 150 290 S 220 350, 270 350 S 340 312, 370 312" stroke="var(--motif-b)" stroke-width="2.4" fill="none" stroke-linecap="round" />
+            </svg>
+          </div>
+          <ul class="hero__facts">
+            <li><span class="dot"></span> Atención integral y accesible</li>
+            <li><span class="dot"></span> Terapias regenerativas especializadas</li>
+            <li><span class="dot"></span> Trato humano, sin prisa</li>
+          </ul>
+        </div>
+      </div>
+      <div class="hero__ticker" aria-hidden="true">
+        <span>Ozonoterapia</span><span>·</span><span>Plasma rico en plaquetas</span><span>·</span><span>Valoración personalizada</span><span>·</span><span>Seguimiento cercano</span><span>·</span><span>Calidez humana</span><span>·</span>
+      </div>
+    </section>
+
+    <!-- TERAPIAS -->
+    <section class="therapies" id="terapias">
+      <div class="section-head">
+        <h2 class="section-title">Dos terapias, un mismo cuidado</h2>
+        <p class="section-intro">Tratamientos innovadores que acompañamos contigo en cada paso. Cada uno, valorado y aplicado por profesionales.</p>
+      </div>
+
+      <article class="therapy-block">
+        <div class="therapy-block__text">
+          <h3>Ozonoterapia</h3>
+          <p>Usamos ozono médico para estimular la oxigenación de los tejidos y la respuesta natural de tu cuerpo. Es un procedimiento limpio, mínimamente invasivo y adaptado a tus necesidades.</p>
+          <ul class="checks">
+            <li>Mejora la circulación y la oxigenación</li>
+            <li>Apoya procesos de recuperación</li>
+            <li>Sesiones cortas, sin hospitalización</li>
+          </ul>
+          <a class="link-arrow" href="#contacto">Solicita tu valoración <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="therapy-block__art therapy-block__art--ozone">
+          <svg viewBox="0 0 320 320" role="img" aria-label="Representación de ozono: tres átomos en órbita y ondas de oxígeno" class="art-svg">
+            <g class="art-spin" style="transform-origin:160px 160px">
+              <circle cx="160" cy="160" r="120" stroke="var(--ink-soft)" stroke-width="1.2" fill="none" opacity="0.25"/>
+              <circle cx="160" cy="160" r="120" stroke="var(--ozone)" stroke-width="2" fill="none" stroke-dasharray="6 10" opacity="0.7"/>
+            </g>
+            <circle cx="160" cy="160" r="46" fill="var(--ozone)"/>
+            <circle cx="160" cy="160" r="46" stroke="#fff" stroke-width="1.4" opacity="0.45" fill="none"/>
+            <circle cx="280" cy="160" r="13" fill="var(--ozone-deep)"/>
+            <circle cx="100" cy="262" r="10" fill="var(--ozone-deep)"/>
+            <path d="M40 90 C 90 90, 110 60, 160 60 S 250 110, 290 90" stroke="var(--ozone)" stroke-width="2" fill="none" opacity="0.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </article>
+
+      <article class="therapy-block therapy-block--reverse">
+        <div class="therapy-block__text">
+          <h3>Plasma rico en plaquetas (PRP)</h3>
+          <p>Aprovechamos el poder regenerativo de tu propia sangre: concentramos plaquetas y factores de crecimiento para activar la reparación natural de tejidos.</p>
+          <ul class="checks">
+            <li>Origen autólogo: de tu cuerpo, para tu cuerpo</li>
+            <li>Estimula la regeneración de tejidos</li>
+            <li>Tratamiento ambulatorio y seguro</li>
+          </ul>
+          <a class="link-arrow" href="#contacto">Solicita tu valoración <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="therapy-block__art therapy-block__art--plasma">
+          <svg viewBox="0 0 320 320" role="img" aria-label="Representación de plasma: gotas y células en regeneración" class="art-svg">
+            <g class="art-float">
+              <path d="M160 40 C 200 110, 210 150, 160 200 C 110 150, 120 110, 160 40 Z" fill="var(--plasma)"/>
+              <path d="M160 70 C 188 120, 192 150, 160 184 C 128 150, 132 120, 160 70 Z" fill="var(--plasma-deep)" opacity="0.55"/>
+            </g>
+            <g class="art-spin" style="transform-origin:160px 160px">
+              <circle cx="160" cy="160" r="118" stroke="var(--bone)" stroke-width="1.2" fill="none" opacity="0.25"/>
+              <circle cx="160" cy="160" r="118" stroke="var(--plasma)" stroke-width="2" fill="none" stroke-dasharray="5 12" opacity="0.7"/>
+            </g>
+            <circle cx="160" cy="160" r="40" fill="none" stroke="var(--bone)" stroke-width="2.2"/>
+            <circle cx="92" cy="120" r="7" fill="var(--plasma)"/>
+            <circle cx="236" cy="206" r="9" fill="var(--plasma)"/>
+            <circle cx="200" cy="96" r="6" fill="var(--bone)" opacity="0.8"/>
+          </svg>
+        </div>
+      </article>
+    </section>
+
+    <!-- PROCESO -->
+    <section class="process" id="proceso">
+      <div class="section-head">
+        <h2 class="section-title">De tu llegada a tu bienestar</h2>
+        <p class="section-intro">Un camino claro, sin sorpresas. Así cuidamos de ti desde el primer contacto.</p>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <span class="step__num">1</span>
+          <h3>Agenda tu cita</h3>
+          <p>En minutos, por esta web o por teléfono. Elegimos el horario que mejor te acomoda.</p>
+        </li>
+        <li class="step">
+          <span class="step__num">2</span>
+          <h3>Valoración personalizada</h3>
+          <p>Te escuchamos. Un profesional revisa tu caso y define el plan contigo, sin prisa.</p>
+        </li>
+        <li class="step">
+          <span class="step__num">3</span>
+          <h3>Tu terapia</h3>
+          <p>Aplicamos el tratamiento en un espacio calmado, con protocols seguros y cuidado humano.</p>
+        </li>
+        <li class="step">
+          <span class="step__num">4</span>
+          <h3>Seguimiento cercano</h3>
+          <p>Permanecemos contigo después. Ajustamos y acompañamos tu recuperación y bienestar.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- NOSOTROS / MANIFIESTO -->
+    <section class="manifesto" id="nosotros">
+      <div class="manifesto__grid">
+        <div class="manifesto__lead">
+          <h2 class="section-title section-title--invert">Por qué MedicSalud</h2>
+          <p class="manifesto__statement">Creemos que la buena medicina no se queda en el diagnóstico. Se siente en el trato.</p>
+        </div>
+        <ul class="manifesto__list">
+          <li>
+            <h3>Calidez humana</h3>
+            <p>Amabilidad, respeto y empatía en cada encuentro. Eres persona, no expediente.</p>
+          </li>
+          <li>
+            <h3>Accesible</h3>
+            <p>Atención de calidad al alcance de personas y familias, sin barreras innecesarias.</p>
+          </li>
+          <li>
+            <h3>Integral</h3>
+            <p>Miramos tu salud completa, no solo el síntoma del día.</p>
+          </li>
+          <li>
+            <h3>Innovadora</h3>
+            <p>Terapias regenerativas como la ozonoterapia y el PRP, aplicadas con criterio.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONFIANZA -->
+    <section class="trust" id="confianza">
+      <div class="section-head">
+        <h2 class="section-title">Quién te atiende</h2>
+        <p class="section-intro">Un equipo multidisciplinario respaldado por protocolos claros. Los nombres abajo son ilustrativos y serán reemplazados por el equipo real.</p>
+      </div>
+      <div class="team">
+        <figure class="member">
+          <div class="member__avatar" style="--c:var(--ozone)">DR</div>
+          <figcaption>
+            <h3>Dra. [Nombre]</h3>
+            <p>Medicina regenerativa</p>
+          </figcaption>
+        </figure>
+        <figure class="member">
+          <div class="member__avatar" style="--c:var(--plasma)">MR</div>
+          <figcaption>
+            <h3>Dr. Diego A. Sanjines Clavijo</h3>
+            <p>Ozonoterapia</p>
+          </figcaption>
+        </figure>
+        <figure class="member">
+          <div class="member__avatar" style="--c:var(--ozone-deep)">AP</div>
+          <figcaption>
+            <h3>Lic. [Nombre]</h3>
+            <p>Atención y seguimiento</p>
+          </figcaption>
+        </figure>
+      </div>
+
+      <blockquote class="quote">
+        <p>“Llegué con dolor y salí sintiéndome escuchada. No solo me trataron, me explicaron y acompañaron.”</p>
+        <cite>— Paciente (testimonio ilustrativo)</cite>
+      </blockquote>
+    </section>
+
+    <!-- CONTACTO / AGENDAR -->
+    <section class="book" id="contacto">
+      <div class="book__grid">
+        <div class="book__intro">
+          <h2 class="book__title">Agenda tu cita</h2>
+          <p class="book__lede">Cuéntanos qué necesitas y te contactamos para confirmar tu horario. El formulario es demostrativo en esta versión.</p>
+          <ul class="book__points">
+            <li><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/></svg> Respuesta en menos de 24 h</li>
+            <li><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Sin compromiso en la valoración</li>
+          </ul>
+        </div>
+        <form class="book__form" id="bookForm" novalidate>
+          <div class="field">
+            <label for="name">Nombre completo</label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="phone">Teléfono o correo</label>
+            <input id="phone" name="phone" type="text" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="therapy">Terapia de interés</label>
+            <select id="therapy" name="therapy">
+              <option value="ozono">Ozonoterapia</option>
+              <option value="prp">Plasma rico en plaquetas (PRP)</option>
+              <option value="otra">Aún no lo sé</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="msg">Cuéntanos brevemente</label>
+            <textarea id="msg" name="msg" rows="3"></textarea>
+          </div>
+          <button class="btn btn--ink btn--lg" type="submit">Solicitar mi cita</button>
+          <p class="book__note" id="formNote" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="brand brand--footer">
+        <img class="brand__logo" src="img/logomedical2.svg" alt="MedicSalud" />
+          
+        </span>
+        <p>Atención médica integral con calidez humana. Ozonoterapia y PRP.</p>
+      </div>
+      <nav class="footer__col" aria-label="Enlaces">
+        <h3>Explora</h3>
+        <a href="#terapias">Terapias</a>
+        <a href="#proceso">Cómo funciona</a>
+        <a href="#nosotros">Nosotros</a>
+      </nav>
+      <div class="footer__col">
+        <h3>Contacto</h3>
+        <p>[Dirección y teléfono por confirmar]</p>
+        <p>Horario: [Lunes a viernes, por confirmar]</p>
+      </div>
+    </div>
+    <div class="footer__base animate__animated animate__fadeInLeft">
+      <span>©<span id="year">YeyalDesigner</span> 2026 </span>
+      <a href="#top">Volver arriba</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

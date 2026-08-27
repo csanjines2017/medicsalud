@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-26T19:05:00.000Z",
+  "title": "Design System: MedicSalud",
+  "extensions": {
+    "colorMeta": {
+      "bone": {
+        "role": "background",
+        "displayName": "Bone",
+        "canonical": "#f6f0f0"
+      },
+      "bone-2": {
+        "role": "background",
+        "displayName": "Bone-2",
+        "canonical": "#efe7e7"
+      },
+      "bone-3": {
+        "role": "border",
+        "displayName": "Bone-3",
+        "canonical": "#e7dddd"
+      },
+      "ink": {
+        "role": "foreground",
+        "displayName": "Ink",
+        "canonical": "#10302A"
+      },
+      "ink-soft": {
+        "role": "foreground",
+        "displayName": "Ink Soft",
+        "canonical": "#3C564F"
+      },
+      "ozone": {
+        "role": "primary",
+        "displayName": "Ozone",
+        "canonical": "#2E7D32"
+      },
+      "ozone-deep": {
+        "role": "primary",
+        "displayName": "Ozone Deep",
+        "canonical": "#1F5E22"
+      },
+      "green": {
+        "role": "accent",
+        "displayName": "Green",
+        "canonical": "#83c352"
+      },
+      "plasma": {
+        "role": "accent",
+        "displayName": "Plasma",
+        "canonical": "#E0A33B"
+      },
+      "plasma-deep": {
+        "role": "accent",
+        "displayName": "Plasma Deep",
+        "canonical": "#C98221"
+      },
+      "motif-a": {
+        "role": "accent",
+        "displayName": "Motif A",
+        "canonical": "#83c352"
+      },
+      "motif-b": {
+        "role": "accent",
+        "displayName": "Motif B",
+        "canonical": "#E0A33B"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Brand and hero headlines"
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "UI and body text"
+      }
+    },
+    "shadows": [
+      {
+        "name": "shadow-1",
+        "value": "0 18px 40px -24px rgba(16, 48, 42, 0.45)",
+        "purpose": "Standard shadow for buttons and cards"
+      },
+      {
+        "name": "shadow-2",
+        "value": "0 30px 60px -30px rgba(16, 48, 42, 0.55)",
+        "purpose": "Larger shadow for hovered elements"
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Default easing for state transitions"
+      },
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Ease out motion for hover effects"
+      },
+      {
+        "name": "flow",
+        "value": "stroke-dashoffset: 0",
+        "purpose": "Path animation for pulse effects"
+      },
+      {
+        "name": "spin",
+        "value": "rotate(360deg)",
+        "purpose": "Continuous rotation for orbital elements"
+      },
+      {
+        "name": "breathe",
+        "value": "scale(1.08)",
+        "purpose": "Pulsing scale animation"
+      },
+      {
+        "name": "pulse",
+        "value": "scale(1.12)",
+        "purpose": "Heartbeat-like pulse animation"
+      },
+      {
+        "name": "twinkle",
+        "value": "opacity: .4",
+        "purpose": "Twinkling opacity animation"
+      },
+      {
+        "name": "float",
+        "value": "translateY(-10px)",
+        "purpose": "Floating up-down animation"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button (Ozone)",
+      "kind": "button",
+      "refersTo": "button--ozone",
+      "description": "Primary action button using ozone color",
+      "html": "<button class=\"btn btn--ozone btn--lg\">Agenda tu cita</button>",
+      "css": ".btn--ozone { background: var(--ozone); color: #fff; box-shadow: var(--shadow-1); } .btn--ozone:hover { background: var(--ozone-deep); transform: translateY(-2px); box-shadow: var(--shadow-2); }"
+    },
+    {
+      "name": "Primary Button (Plasma)",
+      "kind": "button",
+      "refersTo": "button--plasma",
+      "description": "Primary action button using plasma color",
+      "html": "<button class=\"btn btn--plasma nav__cta\">Agenda tu cita</button>",
+      "css": ".btn--plasma { background: var(--plasma); color: var(--ink); box-shadow: var(--shadow-1); } .btn--plasma:hover { background: var(--plasma-deep); color: #fff; transform: translateY(-2px); box-shadow: var(--shadow-2); }"
+    },
+    {
+      "name": "Primary Button (Ink)",
+      "kind": "button",
+      "refersTo": "button--ink",
+      "description": "Primary action button using ink color",
+      "html": "<button class=\"btn btn--ink btn--lg\" type=\"submit\">Solicitar mi cita</button>",
+      "css": ".btn--ink { background: var(--ink); color: var(--bone); box-shadow: var(--shadow-1); } .btn--ink:hover { transform: translateY(-2px); box-shadow: var(--shadow-2); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button--ghost",
+      "description": "Secondary button with transparent background",
+      "html": "<button class=\"btn btn--ghost btn--lg\">Conoce las terapias</button>",
+      "css": ".btn--ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.6px var(--ink); } .btn--ghost:hover { background: var(--ink); color: var(--bone); transform: translateY(-2px); }"
+    },
+    {
+      "name": "Navigation Link",
+      "kind": "nav",
+      "refersTo": "nav__links a:not(.nav__cta)",
+      "description": "Standard navigation link",
+      "html": "<a href=\"#terapias\">Terapias</a>",
+      "css": ".nav__links a:not(.nav__cta) { color: var(--ink-soft); font-weight: 500; position: relative; padding: .3rem 0; } .nav__links a:not(.nav__cta)::after { content: \"\"; position: absolute; left: 0; bottom: -2px; width: 100%; height: 2px; background: var(--ozone); transform: scaleX(0); transform-origin: left; transition: transform .25s var(--ease); } .nav__links a:not(.nav__cta):hover { color: var(--ink); } .nav__links a:not(.nav__cta):hover::after { transform: scaleX(1); }"
+    },
+    {
+      "name": "Form Input",
+      "kind": "input",
+      "refersTo": ".field input, .field select, .field textarea",
+      "description": "Standard form input field",
+      "html": "<input id=\"name\" name=\"name\" type=\"text\" autocomplete=\"name\" required />",
+      "css": ".field input, .field select, .field textarea { font-family: inherit; font-size: 1rem; color: var(--ink); padding: .8rem 1rem; border-radius: var(--radius-sm); border: 1.5px solid var(--bone-3); background: var(--bone); transition: border-color .2s, box-shadow .2s; width: 100%; } .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--ozone); box-shadow: 0 0 0 4px rgba(14,156,134,.18); }"
+    },
+    {
+      "name": "Form Textarea",
+      "kind": "textarea",
+      "refersTo": ".field textarea",
+      "description": "Multi-line form input field",
+      "html": "<textarea id=\"msg\" name=\"msg\" rows=\"3\"></textarea>",
+      "css": ".field textarea { resize: vertical; font-family: inherit; font-size: 1rem; color: var(--ink); padding: .8rem 1rem; border-radius: var(--radius-sm); border: 1.5px solid var(--bone-3); background: var(--bone); transition: border-color .2s, box-shadow .2s; width: 100%; } .field textarea:focus { outline: none; border-color: var(--ozone); box-shadow: 0 0 0 4px rgba(14,156,134,.18); }"
+    },
+    {
+      "name": "Form Select",
+      "kind": "select",
+      "refersTo": ".field select",
+      "description": "Dropdown selection field",
+      "html": "<select id=\"therapy\" name=\"therapy\"><option value=\"ozono\">Ozonoterapia</option><option value=\"prp\">Plasma rico en plaquetas (PRP)</option><option value=\"otra\">Aún no lo sé</option></select>",
+      "css": ".field select { font-family: inherit; font-size: 1rem; color: var(--ink); padding: .8rem 1rem; border-radius: var(--radius-sm); border: 1.5px solid var(--bone-3); background: var(--bone); transition: border-color .2s, box-shadow .2s; width: 100%; } .field select:focus { outline: none; border-color: var(--ozone); box-shadow: 0 0 0 4px rgba(14,156,134,.18); }"
+    },
+    {
+      "name": "Hero Section",
+      "kind": "custom",
+      "refersTo": ".hero",
+      "description": "Main hero section with therapy toggle and call to action",
+      "html": "<section class=\"hero\" id=\"inicio\"><div class=\"hero__grid\"><div class=\"hero__copy\"><h1 class=\"hero__title\">Curamos con ciencia, <span class=\"hl\">tratamos con calidez</span>.</h1><p class=\"hero__lede\">Clínica de salud integral con terapias innovadoras —ozonoterapia y plasma rico en plaquetas— entregadas con empatía, respeto y cercanía humana.</p><div class=\"hero__actions\"><a class=\"btn btn--ozone btn--lg\" href=\"#contacto\">Agenda tu cita</a><a class=\"btn btn--ghost btn--lg\" href=\"#terapias\">Conoce las terapias</a></div></div><div class=\"hero__visual\" data-theme=\"ozono\"><div class=\"orb\"><svg viewBox=\"0 0 400 400\" class=\"orb__svg\" role=\"img\" aria-label=\"Motivo de oxígeno y pulso vital\"><defs><radialGradient id=\"glow\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0%\" stop-color=\"var(--motif-a)\" stop-opacity=\"0.35\" /><stop offset=\"100%\" stop-color=\"var(--motif-a)\" stop-opacity=\"0\" /></radialGradient></defs><circle class=\"orb__glow\" cx=\"200\" cy=\"200\" r=\"160\" fill=\"url(#glow)\" /><g class=\"orb__orbit\" style=\"transform-origin:200px 200px\"><ellipse cx=\"200\" cy=\"200\" rx=\"150\" ry=\"92\" stroke=\"var(--motif-a)\" stroke-width=\"1.4\" fill=\"none\" opacity=\"0.35\" /><ellipse cx=\"200\" cy=\"200\" rx=\"112\" ry=\"148\" stroke=\"var(--motif-b)\" stroke-width=\"1.4\" fill=\"none\" opacity=\"0.30\" transform=\"rotate(60 200 200)\" /><circle class=\"orb__node\" cx=\"350\" cy=\"200\" r=\"9\" fill=\"var(--motif-a)\" /><circle class=\"orb__node orb__node--b\" cx=\"200\" cy=\"52\" r=\"7\" fill=\"var(--motif-b)\" /><circle class=\"orb__node\" cx=\"96\" cy=\"262\" r=\"6\" fill=\"var(--motif-a)\" opacity=\"0.85\" /></g><circle class=\"orb__core\" cx=\"200\" cy=\"200\" r=\"34\" fill=\"var(--motif-a)\" /><circle cx=\"200\" cy=\"200\" r=\"34\" stroke=\"#fff\" stroke-width=\"1.2\" opacity=\"0.5\" fill=\"none\" /><path class=\"orb__pulse\" d=\"M30 320 C 80 320, 100 290, 150 290 S 220 350, 270 350 S 340 312, 370 312\" stroke=\"var(--motif-b)\" stroke-width=\"2.4\" fill=\"none\" stroke-linecap=\"round\" /></svg></div><ul class=\"hero__facts\"><li><span class=\"dot\"></span> Atención integral y accesible</li><li><span class=\"dot\"></span> Terapias regenerativas especializadas</li><li><span class=\"dot\"></span> Trato humano, sin prisa</li></ul><div class=\"hero__ticker\" aria-hidden=\"true\"><span>Ozonoterapia</span><span>·</span><span>Plasma rico en plaquetas</span><span>·</span><span>Valoración personalizada</span><span>·</span><span>Seguimiento cercano</span><span>·</span><span>Calidez humana</span><span>·</span></div></div></div></section>",
+      "css": ".hero { padding-top: clamp(3rem, 6vw, 5rem); position: relative; background: var(--ink); color: var(--bone); } .hero__grid { max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; } .hero__title { font-size: clamp(2.6rem, 1.6rem + 4.2vw, 4.6rem); color: #fff; } .hero__title .hl { color: #83c352; } .hero__lede { margin-top: 1.4rem; max-width: 46ch; color: var(--bone-soft); font-size: 1.15rem; } .therapy { margin-top: 2rem; display: inline-flex; gap: .4rem; padding: .35rem; background: var(--bone-2); border-radius: 999px; } .therapy__opt { border: 0; background: transparent; cursor: pointer; font-family: inherit; font-weight: 600; font-size: .98rem; padding: .7rem 1.2rem; border-radius: 999px; color: var(--ink-soft); transition: color .2s, background .25s var(--ease), box-shadow .25s; } .therapy__opt.is-active { background: #fff; color: var(--ink); box-shadow: var(--shadow-1); } .therapy__desc { margin-top: 1rem; min-height: 3.2em; color: var(--bone-soft); max-width: 44ch; transition: opacity .3s var(--ease); } .hero__actions { margin-top: 1.8rem; display: flex; flex-wrap: wrap; gap: .9rem; } .hero__visual { position: relative; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; } .orb { position: relative; width: min(100%, 420px); aspect-ratio: 1; } .orb::before { content: \"\"; position: absolute; inset: 8%; background: radial-gradient(circle at 50% 45%, rgba(14,156,134,.16), transparent 68%); border-radius: 50%; filter: blur(4px); } .orb__svg { width: 100%; height: 100%; overflow: visible; } .orb__glow { animation: breathe 6s var(--ease) infinite; transform-box: fill-box; transform-origin: center; } .orb__core { animation: pulse 3.4s var(--ease) infinite; transform-box: fill-box; transform-origin: center; } .orb__orbit { animation: spin 26s linear infinite; transform-box: view-box; transform-origin: 200px 200px; } .orb__node { transform-box: fill-box; transform-origin: center; animation: twinkle 4s ease-in-out infinite; } .orb__node--b { animation-delay: 1.2s; } .orb__pulse { stroke-dasharray: 520; stroke-dashoffset: 520; animation: flow 5s linear infinite; } .hero__facts { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; width: 100%; max-width: 380px; } .hero__facts li { display: flex; align-items: center; gap: .7rem; font-weight: 500; color: var(--bone-soft); } .hero__facts .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--ozone); flex: none; box-shadow: 0 0 0 4px rgba(14,156,134,.18); } .hero__ticker { margin-top: clamp(2.5rem, 5vw, 4rem); border-top: 1px solid rgba(246,240,240,0.18); border-bottom: 1px solid rgba(246,240,240,0.18); padding: .9rem 0; display: flex; gap: 1.4rem; flex-wrap: wrap; justify-content: center; color: var(--bone-soft); font-weight: 600; letter-spacing: .01em; font-size: .95rem; } .hero__ticker span:nth-child(even) { color: var(--plasma); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Ciencia viva con calidez humana",
+    "overview": "MedicSalud's design system combines scientific precision with human warmth. The visual language uses organic orbs and pulse lines to represent oxygen (ozone) and regeneration (plasma) on a warm bone-colored foundation. This creates a distinctive medical aesthetic that avoids cold institutional blues while maintaining professionalism and trust.",
+    "keyCharacteristics": [
+      "Organic visual language with orbital motifs",
+      "Warm bone-colored foundation (#f6f0f0)",
+      "Dominant ozone accent (#2E7D32) for primary actions",
+      "Warm plasma accent (#E0A33B) for secondary actions and warmth",
+      "Therapy-toggle retheming that changes visual context",
+      "Bricolage Grotesque for display, Hanken Grotesk for body",
+      "Purposeful animations that respect prefers-reduced-motion"
+    ],
+    "rules": [
+      {
+        "name": "The Ozone Plasma Rule",
+        "body": "Ozone occupies complete regions (PRP section, footer, nav CTA) while plasma carries the closing action",
+        "section": "colors"
+      },
+      {
+        "name": "The Therapy Toggle Rule",
+        "body": "The therapy toggle re-themizes the hero motif and copy using CSS vars --motif-a/--motif-b",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do use the warm bone foundation as the primary background",
+      "Do use ozone for primary actions and regions",
+      "Do use plasma for warmth and closing actions",
+      "Do respect the therapy toggle visual language",
+      "Do include purposeful animations that can be reduced"
+    ],
+    "donts": [
+      "Don't use cold institutional blues",
+      "Don't use static medical icon grids",
+      "Don't overcomplicate the visual language",
+      "Don't forget to respect motion reduction preferences"
+    ]
+  }
+}
